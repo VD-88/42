@@ -6,13 +6,13 @@
 /*   By: vdukhani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 11:10:13 by vdukhani          #+#    #+#             */
-/*   Updated: 2023/07/06 15:10:53 by vdukhani         ###   ########.fr       */
+/*   Updated: 2023/07/08 23:41:42 by vdukhani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchair(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }

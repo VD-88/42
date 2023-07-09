@@ -6,7 +6,7 @@
 /*   By: vdukhani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 17:24:20 by vdukhani          #+#    #+#             */
-/*   Updated: 2023/07/07 00:09:49 by vdukhani         ###   ########.fr       */
+/*   Updated: 2023/07/08 23:49:56 by vdukhani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,24 @@
 
 void	ft_print_comb(void)
 {
-	char	run;
 	char	a[3];
 
 	a[0] = 47;
-	run = 1;
 	write(1, "012", 3);
-	while (a[0] < 55)
+	while (a[0]++ < 55)
 	{
-		a[1] = 48;
-		a[0]++;
-		while (a[1] < 57)
+		a[1] = a[0];
+		while (a[1]++ < 57)
 		{
 			a[2] = 50;
-			a[1]++;
-			while (a[2] < 57)
+			while (a[2]++ < 57)
 			{
-				a[2]++;
 				if (a[2] > a[1] && a[1] > a[0])
 				{
-					write(1, ",", 1);
-					write(1, " ", 1);
-					write(1, &a, 3);	
+					write(1, ", ", 2);
+					write(1, &a, 3);
 				}
 			}
 		}
 	}
-}
-
-int	main(void)
-{
-	ft_print_comb();
 }

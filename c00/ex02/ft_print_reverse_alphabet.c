@@ -6,7 +6,7 @@
 /*   By: vdukhani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:08:34 by vdukhani          #+#    #+#             */
-/*   Updated: 2023/07/06 16:17:26 by vdukhani         ###   ########.fr       */
+/*   Updated: 2023/07/08 23:43:48 by vdukhani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,4 @@ void	ft_print_reverse_alphabet(void)
 		write(1, &letter, 1);
 		ascii_number--;
 	}
-}
-
-int	main(void)
-{
-	ft_print_reverse_alphabet();
-	return (0);
 }

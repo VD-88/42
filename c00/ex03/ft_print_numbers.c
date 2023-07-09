@@ -6,7 +6,7 @@
 /*   By: vdukhani <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:19:01 by vdukhani          #+#    #+#             */
-/*   Updated: 2023/07/06 16:57:41 by vdukhani         ###   ########.fr       */
+/*   Updated: 2023/07/08 23:44:19 by vdukhani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	ft_print_numbers(void)
 {
-	int	digit;
+	char	digit;
 
 	digit = 48;
 	while (digit < 58)
 	{
-		write(1, &digit, 4);
+		write(1, &digit, 1);
 		digit++;
 	}
 }
