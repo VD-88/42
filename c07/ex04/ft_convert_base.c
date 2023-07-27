@@ -52,7 +52,7 @@ int	string_length(int number, int base_length)
 	int	len;
 
 	len = 0;
-	if (number < 0)
+	if (number <= 0)
 	{
 		len = 1;
 	}
@@ -75,20 +75,19 @@ char	*from_int_to_base(int number, char *base_to, int base_len, int str_len)
 		numb = -number;
 	else
 		numb = number;
-	if (base_check(base_to))
+	number_to_return = malloc(str_len * sizeof(char) + 1);
+	if (number_to_return == 0)
+		return (0);
+	number_to_return[str_len] = 0;
+	str_len--;
+	while (str_len >= 0)
 	{
-		number_to_return = malloc(str_len * sizeof(char) + 1);
-		number_to_return[str_len] = 0;
+		number_to_return[str_len] = base_to[numb % base_len];
+		numb /= base_len;
 		str_len--;
-		while (str_len >= 0)
-		{
-			number_to_return[str_len] = base_to[numb % base_len];
-			numb /= base_len;
-			str_len--;
-		}
-		if (number < 0)
-			number_to_return[0] = '-';
 	}
+	if (number < 0)
+		number_to_return[0] = '-';
 	return (number_to_return);
 }
 
@@ -107,11 +106,13 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	b_len = base_len(base_to);
 	str_len = string_length(number, b_len);
 	number_to_return = from_int_to_base(number, base_to, b_len, str_len);
+	if (number_to_return == 0)
+		return (0);
 	return (number_to_return);
 }
 /*
 int main()
 {
-	printf("%s" ,ft_convert_base("-+--+2147483647", "0123456789", "01"));
+	printf("%s" ,ft_convert_base("-+--+0", "0123456789", "01"));
 }
 */
