@@ -6,7 +6,7 @@
 /*   By: vdukhani <vdukhani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:29:02 by vdukhani          #+#    #+#             */
-/*   Updated: 2023/09/21 10:45:27 by vdukhani         ###   ########.fr       */
+/*   Updated: 2023/09/21 13:38:33 by vdukhani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <stdlib.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t l);
-
 
 int	subs_count(char const *s, char c)
 {
@@ -29,14 +28,13 @@ int	subs_count(char const *s, char c)
 			subs_count++;
 		ind++;
 	}
-//printf("subs_n=%d\n", subs_count);	
 	return (subs_count);
 }
 
-int	sub_len(char *s, char c)
+int	sub_len(char const *s, char c)
 {
 	int	len_count;
-	
+
 	len_count = 0;
 	while (*s == c)
 		s++;
@@ -50,48 +48,48 @@ int	sub_len(char *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	int	subs_n;
+	int		subs_n;
 	char	**arr;
-	int	size;
-	int i;
-	char *str;
-//printf("%d\n", sizeof(char));
-	str = s;
+	int		size;
+	int		i;
+
+	if (s == NULL)
+		return (NULL);
 	subs_n = subs_count(s, c);
-	arr = malloc(sizeof(char*) * (subs_n + 1));
+	arr = malloc (sizeof (char *) * (subs_n + 1));
 	if (arr == 0)
 		return (NULL);
 	i = 0;
-	//arr[subs_n] = NULL;
+	arr[subs_n] = NULL;
 	while (i < subs_n)
 	{
-		size = sub_len(str, c);
-//printf("size=%d\n", size);
-		while (*str == c)
-			str++;
+		size = sub_len(s, c);
+		while (*s == c)
+			s++;
 		arr[i] = malloc(size + 1);
-//printf("str=%s\n", str);
-		ft_memcpy(arr[i], str, size);
-		arr[i][size + 1] = 0;
-		i++;
-		str += size;
+		if (arr[i] == NULL)
+		{
+			while (i-- > 0)
+				free(arr[i]);
+			free(arr);
+			return (NULL);
+		}
+		ft_memcpy(arr[i], s, size);
+		arr[i++][size + 1] = 0;
+		s += size;
 	}
 	return (arr);
 }
-
-
-
-
 /*
 int main()
 {
-	char s[] = "\0\0 1111a22\0 33333a\0";
-	char **a = ft_split(s, ' ');
+	char *s = "aa111a2222a33aaa";
+	char **a = ft_split(s, 'a');
 	int i = 0;
 	printf("\n");
-	while (i < 3)
+	while (i < 4)
 	{
-		printf("%s\n", a[i]);
+		printf("%s\n", ft_split(s, 'a')[i]);
 		i++;
 	}
 }
