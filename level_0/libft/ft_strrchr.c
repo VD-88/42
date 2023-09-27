@@ -6,13 +6,13 @@
 /*   By: vdukhani <vdukhani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/06 17:19:45 by vdukhani          #+#    #+#             */
-/*   Updated: 2023/09/06 17:32:22 by vdukhani         ###   ########.fr       */
+/*   Updated: 2023/09/27 16:04:24 by vdukhani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-const char	*ft_strrchr(const char *str, int c)
+char	*ft_strrchr(const char *str, int c)
 {
 	unsigned int	len;
 

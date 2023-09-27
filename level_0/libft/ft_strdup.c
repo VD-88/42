@@ -6,13 +6,12 @@
 /*   By: vdukhani <vdukhani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 13:59:35 by vdukhani          #+#    #+#             */
-/*   Updated: 2023/09/08 15:11:25 by vdukhani         ###   ########.fr       */
+/*   Updated: 2023/09/27 16:38:17 by vdukhani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-int	ft_strlen(char *str);
+#include "libft.h"
 
 char	*ft_strdup(const char *src)
 {

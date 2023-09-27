@@ -6,12 +6,13 @@
 /*   By: vdukhani <vdukhani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:29:02 by vdukhani          #+#    #+#             */
-/*   Updated: 2023/09/21 13:38:33 by vdukhani         ###   ########.fr       */
+/*   Updated: 2023/09/27 16:38:17 by vdukhani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t l);
 
